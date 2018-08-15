@@ -13,8 +13,15 @@ celsiusToFarenheit().toInt
 
 //3
 val input = 2.7255
-val moneySign = '$'
 val msg = f"You owe $$$input%.2f dollars"
+
+def message(d : Double) = f"You owe $$$d%.2f dollars"
+
+message(2.7255)
+message(5.218213)
+message(input)
+
+
 
 //4
 val flag = false
@@ -27,7 +34,5 @@ val val3 = value1.toString
 val val4 = value1.toDouble
 val value1_2 = val4.toInt
 
-//6
-val
 
 
