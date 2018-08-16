@@ -152,12 +152,66 @@ val veryRandomAmount = timer {
 }
 
 
+// EJERCICIOS
+
+// 1
+
+//Function Literal
+val higherNumber =  (x: Int, y: Int) => if (x > y) x else y
+val lowerNumber = (x: Int, y: Int) => if (x < y) x else y
+val secondNumber = (x: Int, y: Int) => y
+
+def pickOneNumber(inputs: (Int, Int, Int), f : (Int, Int) => Int) : Int = {
+  f(inputs._1, f(inputs._2, inputs._3))
+}
+
+val higher = pickOneNumber((2,3,4) , higherNumber)
 
 
+// 2
+
+val random1 = util.Random.nextInt(100)
+val random2 = util.Random.nextInt(100)
+val random3 = util.Random.nextInt(100)
+val randomTuple = (random1, random2, random3)
 
 
+pickOneNumber(randomTuple, higherNumber)
+pickOneNumber(randomTuple, (x,y) => if (x < y) x else y)
+pickOneNumber(randomTuple, secondNumber)
+
+//3
+
+// Higher order function
+def multiplier(x: Int) = (y: Int) => x * y
+val tripler = multiplier(3)
+
+tripler(10)
 
 
+// 4
+
+def fZero[A] (x: A) (f: A => Unit): A = { f(x) ; x }
+
+def fZeroTest (x: String) (f : String => Unit): String = {f(x);x}
+
+fZeroTest("Hello")(s => println(s.reverse))
+
+fZero[Int] (20) (i => println(i*2))
 
 
+// 5
+
+def square(x: Int) : Any = (x * x)
+
+//WRONG WAY
+//val sq = square
+
+//CORRECT WAY
+val squareVal = square _
+val squareFunc : Int => Any = square
+
+squareVal(2)
+squareVal(30)
+squareFunc(5)
 
