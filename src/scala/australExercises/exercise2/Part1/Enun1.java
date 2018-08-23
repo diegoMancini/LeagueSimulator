@@ -1,12 +1,12 @@
-package scala.australExercises.exercise2;
+package scala.australExercises.exercise2.Part1;
 
 /**
  * Created by DiegoMancini on 25/11/16.
  */
-public class Enun2 {
+public class Enun1 {
 
     public static void main(String[] args) {
-        System.out.println("Se debe implementar un sistema de control de ingreso a la Universidad, a través de tarjetas de acceso y molinetes.\n" +
+        System.out.println("\n\n\nSe debe implementar un sistema de control de ingreso a la Universidad, a través de tarjetas de acceso y molinetes.\n" +
                 "\n" +
                 "•\tCada persona con acceso a la organización cuenta con solo una tarjeta de acceso.\n" +
                 "•\tUn alumno puede solo ingresar a los edificios donde se dicte al menos una de sus materias activas. \n" +
