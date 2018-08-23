@@ -10,7 +10,9 @@ object Test {
 
     val data = (List(for (i <- 1 to 10) yield new Building(i)), List(for (i <- 1 to 10) yield new Person("Person number: " + i)) , List(for (i <- 1 to 10) yield new Subject("Subject number: " + i)))
 
-    val austral = new University("Universidad Austral", data )
+//    val austral = new University("Universidad Austral", data )
+
+    buildingList.foreach(println(_))
 
   }
 

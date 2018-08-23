@@ -4,17 +4,17 @@ import scala.util.Random
 
 class Person (val name: String, val accessCard: AccessCard, val occupation: String) {
 
-  def this (name: String) = {
+  private val occupationRandom = randomOccupation()
 
-    this(name, new AccessCard, randomOccupation)
+  def this (name: String) = {
+    this(name, new AccessCard, occupationRandom)
   }
 
   val subjects : List[Subject] = accessCard.getSubjects()
 
-
-  private def randomOccupation  = Random.nextInt(10) {
-    case _ % 2 == 0 => "Student"
-    case _ % 2 != 0 => "Employee"
+  private def randomOccupation() : String = {
+    val random = Random.nextInt(10) +3
+    if (random % 2 == 0) "Student" else "Employee"
   }
 
 
