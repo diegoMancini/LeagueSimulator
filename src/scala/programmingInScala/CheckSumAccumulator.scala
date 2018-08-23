@@ -1,4 +1,4 @@
-package scala
+package scala.programmingInScala
 
 import scala.collection.mutable
 
@@ -9,21 +9,22 @@ class CheckSumAccumulator {
   def add(b: Byte) = {sum += b}
 
   def checkSum() : Int = (sum & 0xFF)+1
+
 }
 
 object CheckSumAccumulator {
+
   private val cache = mutable.Map.empty[String, Int]
 
-  def calculate(s: String) : Int =
-    if (cache.contains(s))
-      cache(s)
+  def calculate(s:String) = {
+    if (cache.contains(s)) cache(s)
     else {
-      val acc = new CheckSumAccumulator
-      for (c <- s)
-        acc.add(c.toByte)
-      val cs = acc.checkSum()
-      cache += (s -> cs)
+      val accumulator = new CheckSumAccumulator
+      for (c <- s) accumulator.add(c.toByte)
+      val cs = accumulator.checkSum()
+      cache += s -> cs
       cs
     }
+  }
 
 }

@@ -1,5 +1,4 @@
-package scala
-
+package scala.programmingInScala
 import CheckSumAccumulator.calculate
 
 object Summer extends App {

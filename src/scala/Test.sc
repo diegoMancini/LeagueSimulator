@@ -1,6 +1,7 @@
 import java.math.BigInteger
 
 import scala.collection.mutable
+import scala.programmingInScala.Rational
 
 val msg = "Mi nombre es Diego Mancini"
 msg.foreach(arg => println(arg))

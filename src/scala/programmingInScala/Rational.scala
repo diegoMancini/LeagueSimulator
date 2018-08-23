@@ -1,6 +1,6 @@
-package scala
+package scala.programmingInScala
 
-class   Rational (n: Int, d: Int) {
+class Rational (n: Int, d: Int) {
 
   require(d != 0)
 
@@ -35,5 +35,4 @@ class   Rational (n: Int, d: Int) {
   private def greatestCommonDivisor(a: Int, b: Int) : Int = if (b == 0) a else greatestCommonDivisor(b, a % b)
 
   implicit def intToRational(x: Int): Rational = new Rational(x)
-
 }
